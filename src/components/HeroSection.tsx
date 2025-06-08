@@ -3,7 +3,10 @@ import { Calendar, MapPin, Clock } from 'lucide-react';
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32">
+      {/* Large header photo space */}
+      <div className="absolute top-0 left-0 right-0 h-32 bg-cathedral-stone/30" />
+      
       {/* Background Image */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat" 
@@ -18,10 +21,10 @@ const HeroSection = () => {
       {/* Content */}
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto animate-fade-in">
         <div className="mb-8">
-          <h1 className="text-6xl md:text-8xl font-bold text-cathedral-cream mb-6 animate-cathedral-glow">
+          <h1 className="text-6xl md:text-8xl font-bold text-cathedral-cream mb-6 animate-cathedral-glow font-rubik-mono">
             WABLIEFTERU?
           </h1>
-          <h2 className="text-3xl md:text-5xl font-semibold text-cathedral-gold mb-8">
+          <h2 className="text-4xl md:text-6xl font-semibold text-cathedral-gold mb-8">
             LIVE!
           </h2>
         </div>

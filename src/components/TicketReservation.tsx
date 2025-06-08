@@ -13,27 +13,54 @@ const TicketReservation = () => {
     email: '',
     guests: '1'
   });
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [hasError, setHasError] = useState(false);
   const { toast } = useToast();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Reservering ingediend:', formData);
     
+    // Simulate potential error (you can remove this in production)
+    const randomError = Math.random() < 0.1; // 10% chance of error for demo
+    
+    if (randomError) {
+      setHasError(true);
+      setIsSubmitted(false);
+      toast({
+        title: "Fout bij reservering",
+        description: "Er ging iets mis, probeer het opnieuw.",
+        variant: "destructive",
+      });
+      return;
+    }
+    
+    setIsSubmitted(true);
+    setHasError(false);
+    
     toast({
       title: "Reservering Ontvangen!",
       description: "Bedankt voor je interesse. We bevestigen je reservering binnen 24 uur.",
-    });
-    
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      guests: '1'
     });
   };
 
   const handleInputChange = (field: string, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }));
+    // Reset states when user starts typing again
+    if (isSubmitted || hasError) {
+      setIsSubmitted(false);
+      setHasError(false);
+    }
+  };
+
+  const resetForm = () => {
+    setFormData({
+      name: '',
+      email: '',
+      guests: '1'
+    });
+    setIsSubmitted(false);
+    setHasError(false);
   };
 
   return (
@@ -53,71 +80,90 @@ const TicketReservation = () => {
         
         <div className="max-w-xl mx-auto">
           <div className="bg-cathedral-stone/10 backdrop-blur-sm p-8 rounded-lg border border-cathedral-gold/30">
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="space-y-2">
-                <Label htmlFor="name" className="text-cathedral-cream flex items-center">
-                  <User className="w-4 h-4 mr-2 text-cathedral-gold" />
-                  Volledige Naam *
-                </Label>
-                <Input
-                  id="name"
-                  type="text"
-                  required
-                  value={formData.name}
-                  onChange={(e) => handleInputChange('name', e.target.value)}
-                  className="bg-cathedral-charcoal/60 border-cathedral-gold/30 text-cathedral-cream placeholder:text-cathedral-gold/50 focus:border-cathedral-gold"
-                  placeholder="Voer je volledige naam in"
-                />
+            {isSubmitted ? (
+              <div className="text-center space-y-6">
+                <div className="text-cathedral-cream text-lg leading-relaxed">
+                  Gefeliciteerd! Jij gaat later aan je kleinkinderen kunnen vertellen over de eerste keer dat Wabliefteru? een live-show heeft gedaan en JIJ was daar bij!
+                </div>
+                <Button 
+                  onClick={resetForm}
+                  className="bg-cathedral-gold text-cathedral-charcoal hover:bg-cathedral-gold/90 font-semibold"
+                >
+                  Nieuwe Reservering
+                </Button>
               </div>
-              
-              <div className="space-y-2">
-                <Label htmlFor="email" className="text-cathedral-cream flex items-center">
-                  <Mail className="w-4 h-4 mr-2 text-cathedral-gold" />
-                  E-mailadres *
-                </Label>
-                <Input
-                  id="email"
-                  type="email"
-                  required
-                  value={formData.email}
-                  onChange={(e) => handleInputChange('email', e.target.value)}
-                  className="bg-cathedral-charcoal/60 border-cathedral-gold/30 text-cathedral-cream placeholder:text-cathedral-gold/50 focus:border-cathedral-gold"
-                  placeholder="jouw@email.com"
-                />
+            ) : hasError ? (
+              <div className="text-center space-y-6">
+                <div className="text-cathedral-cream text-lg leading-relaxed">
+                  OEI! PANIEK! Er ging iets mis, probeer nog een keer... als het dan nog steeds niet lukt probeer ons dan te bereiken via sociale media!
+                </div>
+                <Button 
+                  onClick={() => setHasError(false)}
+                  className="bg-cathedral-gold text-cathedral-charcoal hover:bg-cathedral-gold/90 font-semibold"
+                >
+                  Opnieuw Proberen
+                </Button>
               </div>
-              
-              <div className="space-y-2">
-                <Label htmlFor="guests" className="text-cathedral-cream flex items-center">
-                  <Users className="w-4 h-4 mr-2 text-cathedral-gold" />
-                  Aantal Aanwezigen *
-                </Label>
-                <Select value={formData.guests} onValueChange={(value) => handleInputChange('guests', value)}>
-                  <SelectTrigger className="bg-cathedral-charcoal/60 border-cathedral-gold/30 text-cathedral-cream focus:border-cathedral-gold">
-                    <SelectValue />
-                  </SelectTrigger>
-                  <SelectContent className="bg-cathedral-charcoal border-cathedral-gold/30">
-                    <SelectItem value="1" className="text-cathedral-cream hover:bg-cathedral-gold/20">1 Persoon</SelectItem>
-                    <SelectItem value="2" className="text-cathedral-cream hover:bg-cathedral-gold/20">2 Personen</SelectItem>
-                    <SelectItem value="3" className="text-cathedral-cream hover:bg-cathedral-gold/20">3 Personen</SelectItem>
-                    <SelectItem value="4" className="text-cathedral-cream hover:bg-cathedral-gold/20">4 Personen</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-              
-              <div className="bg-cathedral-gold/10 p-4 rounded-lg border border-cathedral-gold/20">
-                <p className="text-cathedral-gold text-sm">
-                  <strong>Let op:</strong> Dit is een live opnamesessie. Stilte tijdens de opname is essentieel. 
-                  Fotografie en opnames door bezoekers zijn niet toegestaan. Bevestiging wordt binnen 24 uur verzonden.
-                </p>
-              </div>
-              
-              <Button 
-                type="submit" 
-                className="w-full bg-cathedral-gold text-cathedral-charcoal hover:bg-cathedral-gold/90 font-semibold py-3 text-lg transition-all duration-300 hover:scale-105"
-              >
-                Reservering Indienen
-              </Button>
-            </form>
+            ) : (
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="space-y-2">
+                  <Label htmlFor="name" className="text-cathedral-cream flex items-center">
+                    <User className="w-4 h-4 mr-2 text-cathedral-gold" />
+                    Volledige Naam *
+                  </Label>
+                  <Input
+                    id="name"
+                    type="text"
+                    required
+                    value={formData.name}
+                    onChange={(e) => handleInputChange('name', e.target.value)}
+                    className="bg-cathedral-charcoal/60 border-cathedral-gold/30 text-cathedral-cream placeholder:text-cathedral-gold/50 focus:border-cathedral-gold"
+                    placeholder="Voer je volledige naam in"
+                  />
+                </div>
+                
+                <div className="space-y-2">
+                  <Label htmlFor="email" className="text-cathedral-cream flex items-center">
+                    <Mail className="w-4 h-4 mr-2 text-cathedral-gold" />
+                    E-mailadres *
+                  </Label>
+                  <Input
+                    id="email"
+                    type="email"
+                    required
+                    value={formData.email}
+                    onChange={(e) => handleInputChange('email', e.target.value)}
+                    className="bg-cathedral-charcoal/60 border-cathedral-gold/30 text-cathedral-cream placeholder:text-cathedral-gold/50 focus:border-cathedral-gold"
+                    placeholder="jouw@email.com"
+                  />
+                </div>
+                
+                <div className="space-y-2">
+                  <Label htmlFor="guests" className="text-cathedral-cream flex items-center">
+                    <Users className="w-4 h-4 mr-2 text-cathedral-gold" />
+                    Aantal Aanwezigen *
+                  </Label>
+                  <Select value={formData.guests} onValueChange={(value) => handleInputChange('guests', value)}>
+                    <SelectTrigger className="bg-cathedral-charcoal/60 border-cathedral-gold/30 text-cathedral-cream focus:border-cathedral-gold">
+                      <SelectValue />
+                    </SelectTrigger>
+                    <SelectContent className="bg-cathedral-charcoal border-cathedral-gold/30">
+                      <SelectItem value="1" className="text-cathedral-cream hover:bg-cathedral-gold/20">1 Persoon</SelectItem>
+                      <SelectItem value="2" className="text-cathedral-cream hover:bg-cathedral-gold/20">2 Personen</SelectItem>
+                      <SelectItem value="3" className="text-cathedral-cream hover:bg-cathedral-gold/20">3 Personen</SelectItem>
+                      <SelectItem value="4" className="text-cathedral-cream hover:bg-cathedral-gold/20">4 Personen</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+                
+                <Button 
+                  type="submit" 
+                  className="w-full bg-cathedral-gold text-cathedral-charcoal hover:bg-cathedral-gold/90 font-semibold py-3 text-lg transition-all duration-300 hover:scale-105"
+                >
+                  Reserveer je plekje!
+                </Button>
+              </form>
+            )}
           </div>
         </div>
       </div>

@@ -16,7 +16,7 @@ const PracticalInfo = () => {
           </p>
         </div>
         
-        <div className="grid lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {/* Locatie & Toegang */}
           <div className="bg-cathedral-charcoal/40 backdrop-blur-sm p-6 rounded-lg border border-cathedral-gold/20">
             <div className="flex items-center mb-4">
@@ -61,33 +61,9 @@ const PracticalInfo = () => {
             </div>
             
             <div className="space-y-4">
-              <div className="space-y-2 text-cathedral-gold/80 text-sm">
-                <div className="flex justify-between">
-                  <span>Deuren open</span>
-                  <span className="font-medium">19:30</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Welkom & plaatsing</span>
-                  <span className="font-medium">19:45</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Opname start</span>
-                  <span className="font-medium">20:00</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Pauze</span>
-                  <span className="font-medium">21:00</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Einde</span>
-                  <span className="font-medium">22:30</span>
-                </div>
-              </div>
-              
-              <div className="bg-cathedral-gold/10 p-3 rounded text-cathedral-gold/80 text-xs">
-                <strong>Belangrijk:</strong> Stilte tijdens opname is essentieel. 
-                Fotografie en opnames door bezoekers zijn niet toegestaan.
-              </div>
+              <p className="text-cathedral-gold/80 text-sm">
+                Specifieke startuur en duurtijd volgen later nog maar we richten op een start rond 20u!
+              </p>
             </div>
           </div>
         </div>
