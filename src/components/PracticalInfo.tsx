@@ -1,5 +1,5 @@
 
-import { MapPin, Car, Train, Coffee, Clock } from 'lucide-react';
+import { MapPin, Car, Train, Clock } from 'lucide-react';
 
 const PracticalInfo = () => {
   return (
@@ -16,7 +16,7 @@ const PracticalInfo = () => {
           </p>
         </div>
         
-        <div className="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {/* Locatie & Toegang */}
           <div className="bg-cathedral-charcoal/40 backdrop-blur-sm p-6 rounded-lg border border-cathedral-gold/20">
             <div className="flex items-center mb-4">
@@ -30,9 +30,14 @@ const PracticalInfo = () => {
                   Historische Kathedraal<br />
                   Kappelen, België
                 </p>
-                <p className="text-sm text-cathedral-gold/60">
-                  Een prachtig bewaard gebleven middeleeuwse kathedraal met uitzonderlijke akoestiek.
-                </p>
+                <a 
+                  href="https://maps.app.goo.gl/gKSdBceNP6EQUAoa7" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-sm text-cathedral-gold hover:text-cathedral-gold/80 underline"
+                >
+                  Bekijk op Google Maps
+                </a>
               </div>
               
               <div className="space-y-2 text-cathedral-gold/80 text-sm">
@@ -48,56 +53,40 @@ const PracticalInfo = () => {
             </div>
           </div>
           
-          {/* Planning & Voorzieningen */}
+          {/* Planning */}
           <div className="bg-cathedral-charcoal/40 backdrop-blur-sm p-6 rounded-lg border border-cathedral-gold/20">
             <div className="flex items-center mb-4">
               <Clock className="w-6 h-6 text-cathedral-gold mr-3" />
-              <h3 className="text-xl font-semibold text-cathedral-cream">Planning & Voorzieningen</h3>
+              <h3 className="text-xl font-semibold text-cathedral-cream">Tijdschema</h3>
             </div>
             
             <div className="space-y-4">
-              <div>
-                <h4 className="text-cathedral-gold font-medium mb-2">Tijdschema</h4>
-                <div className="space-y-1 text-cathedral-gold/80 text-sm">
-                  <div className="flex justify-between">
-                    <span>Deuren open</span>
-                    <span className="font-medium">19:30</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>Welkom & plaatsing</span>
-                    <span className="font-medium">19:45</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>Opname start</span>
-                    <span className="font-medium">20:00</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>Pauze</span>
-                    <span className="font-medium">21:00</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>Einde</span>
-                    <span className="font-medium">22:30</span>
-                  </div>
+              <div className="space-y-2 text-cathedral-gold/80 text-sm">
+                <div className="flex justify-between">
+                  <span>Deuren open</span>
+                  <span className="font-medium">19:30</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>Welkom & plaatsing</span>
+                  <span className="font-medium">19:45</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>Opname start</span>
+                  <span className="font-medium">20:00</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>Pauze</span>
+                  <span className="font-medium">21:00</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>Einde</span>
+                  <span className="font-medium">22:30</span>
                 </div>
               </div>
               
-              <div>
-                <h4 className="text-cathedral-gold font-medium mb-2">Voorzieningen</h4>
-                <div className="space-y-1 text-cathedral-gold/80 text-sm">
-                  <div className="flex items-center">
-                    <Coffee className="w-3 h-3 mr-2 text-cathedral-gold" />
-                    <span>Gratis versnaperingen tijdens pauze</span>
-                  </div>
-                  <div className="flex items-center">
-                    <span className="w-3 h-3 mr-2 text-cathedral-gold">🎧</span>
-                    <span>Draadloze koptelefoons beschikbaar</span>
-                  </div>
-                  <div className="flex items-center">
-                    <span className="w-3 h-3 mr-2 text-cathedral-gold">📱</span>
-                    <span>Stille modus verplicht tijdens opname</span>
-                  </div>
-                </div>
+              <div className="bg-cathedral-gold/10 p-3 rounded text-cathedral-gold/80 text-xs">
+                <strong>Belangrijk:</strong> Stilte tijdens opname is essentieel. 
+                Fotografie en opnames door bezoekers zijn niet toegestaan.
               </div>
             </div>
           </div>
