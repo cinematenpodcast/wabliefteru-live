@@ -22,10 +22,10 @@ const HeroSection = () => {
         
         {/* Title overlay */}
         <div className="absolute bottom-40 sm:bottom-16 left-0 right-0 z-20 text-center px-2 sm:px-4 w-full">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl font-bold text-cathedral-cream mb-2 animate-cathedral-glow font-rubik-mono leading-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl font-bold text-cathedral-cream mb-2 animate-cathedral-glow font-rubik-mono leading-tight hero-main-title">
             WABLIEFTERU?
           </h1>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold text-cathedral-gold">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold text-cathedral-gold hero-sub-title">
             LIVE!
           </h2>
         </div>
@@ -35,19 +35,15 @@ const HeroSection = () => {
       <section className="-mt-16 pt-16 pb-4 md:py-8 md:mt-0 bg-cathedral-charcoal relative z-0">
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-4">
-            <h2 className="text-4xl md:text-5xl font-bold text-cathedral-cream mb-6">
-              In nomine Podcasti, et Microphoni,
-              <br />
-              et Spiritus Improvisandi.
+            <h2 className="text-4xl md:text-5xl font-bold text-cathedral-cream mb-6 content-title">
+              In nomine Podcasti, et Microphoni, et Spiritus Improvisandi.
             </h2>
             <p className="text-xl text-cathedral-gold max-w-3xl mx-auto leading-relaxed">
-              Op de dag des Heeren, <strong>vrijdag 26 september 2025</strong>,<br />zal de eerste Live-Voorstelling van Wabliefteru? plaatsvinden,<br />op gewijde grond: <strong>'t Kerkske, te Kapellen.</strong>
+              Op de dag des Heeren, <strong>vrijdag 26 september 2025</strong>, zal de eerste Live-Voorstelling van Wabliefteru? plaatsvinden, op gewijde grond: <strong>'t Kerkske, te Kapellen.</strong>
               <br /><br />
               Een avond van bezinning, verbazing en verwondering.
-              <br />
               Een rite van het absurde, in eerbiedige stilte 
               die telkens onderbroken zal worden door luid gelach en mogelijk licht gemompel van "Wabliefteru?"
-              <br />
               En het beste? Deze onvergetelijke ervaring is <strong>volledig gratis!</strong>
             </p>
           </div>

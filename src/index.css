@@ -81,6 +81,18 @@
       radial-gradient(circle at 80% 20%, rgba(139, 119, 101, 0.3) 0%, transparent 50%);
   }
 
+  /* Desktop content width control */
+  .max-w-3xl {
+    max-width: 50% !important;
+  }
+  
+  /* Desktop title width control */
+  .content-title {
+    max-width: 62% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
   /* Mobile-specific background image optimizations */
   @media (max-width: 768px) {
     .hero-bg {
@@ -108,6 +120,26 @@
     .text-xl {
       text-align: center !important;
     }
+    
+    /* Make content section 25% narrower on mobile */
+    .max-w-3xl {
+      max-width: 80% !important;
+    }
+
+         .content-title {
+       max-width: 80% !important;
+       margin-left: auto !important;
+       margin-right: auto !important;
+     }
+     
+     /* Make hero titles 15% bigger on mobile */
+     .hero-main-title {
+       font-size: 2.5rem !important;
+     }
+     
+     .hero-sub-title {
+       font-size: 2rem !important;
+     }
     
     /* Center all practical info card content on mobile */
     .bg-cathedral-charcoal\/40 {

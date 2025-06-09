@@ -16,7 +16,7 @@ const SummarySection = () => {
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto animate-fade-in">
       
         <div className="bg-cathedral-charcoal/80 backdrop-blur-sm rounded-lg p-4 sm:p-6 lg:p-8 mx-auto max-w-2xl border border-cathedral-gold/30">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 text-cathedral-cream">
+          <div className="grid grid-cols-3 gap-2 sm:gap-4 lg:gap-6 text-cathedral-cream">
             <div className="flex flex-col items-center">
               <Calendar className="w-6 h-6 sm:w-8 sm:h-8 text-cathedral-gold mb-2" />
               <span className="text-sm sm:text-base text-cathedral-cream">Vrijdag</span>
