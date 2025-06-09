@@ -97,9 +97,12 @@
   .hero-main-title {
     width: 90vw !important;
     max-width: 90vw !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    font-size: clamp(1.5rem, 8vw, 4rem) !important;
+    font-size: clamp(1.5rem, 8vw, 8rem) !important;
+    margin-left: calc((100vw - 90vw) / 2) !important;
+    margin-right: calc((100vw - 90vw) / 2) !important;
+    text-align: center !important;
+    position: relative !important;
+    left: calc(-50vw + 50%) !important;
   }
 
   /* Mobile-specific background image optimizations */
