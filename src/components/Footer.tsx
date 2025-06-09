@@ -51,9 +51,6 @@ const Footer = () => {
             <p className="text-cathedral-gold/80 text-sm mb-4">
               Wabliefteru? Podcast © 2025
             </p>
-            <p className="text-cathedral-gold/60 text-sm">
-              Speciale dank aan Kerkske Kappelen voor het organiseren van deze bijzondere opnamesessie
-            </p>
           </div>
         </div>
       </div>

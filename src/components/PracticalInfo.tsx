@@ -11,9 +11,7 @@ const PracticalInfo = () => {
           <h2 className="text-4xl md:text-5xl font-bold text-cathedral-cream mb-6">
             Praktische Informatie
           </h2>
-          <p className="text-xl text-cathedral-gold max-w-2xl mx-auto">
-            Alles wat je moet weten voor je bezoek aan deze bijzondere opnamesessie.
-          </p>
+
         </div>
         
         <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
@@ -26,8 +24,8 @@ const PracticalInfo = () => {
             <div className="space-y-4">
               <div>
                 <p className="text-cathedral-gold/80 mb-2">
-                  <strong>Kerkske Kappelen</strong><br />
-                  Historische Kathedraal<br />
+                  <strong>’t Kerkske</strong><br />
+                  Kapelsestraat 182<br />
                   Kappelen, België
                 </p>
                 <a 
@@ -43,11 +41,11 @@ const PracticalInfo = () => {
               <div className="space-y-2 text-cathedral-gold/80 text-sm">
                 <div className="flex items-center">
                   <Car className="w-4 h-4 mr-2 text-cathedral-gold" />
-                  <span>Gratis parkeren in kathedraalplein</span>
+                  <span>Gratis parking</span>
                 </div>
                 <div className="flex items-center">
                   <Train className="w-4 h-4 mr-2 text-cathedral-gold" />
-                  <span>15 minuten lopen van Station Kappelen</span>
+                  <span>30 minuten wandelen van Station Kappelen</span>
                 </div>
               </div>
             </div>

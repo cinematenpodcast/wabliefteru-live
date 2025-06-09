@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WABLIEFTERU? LIVE! - Bevestiging</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&family=Rubik+Mono+One:wght@400&display=swap" rel="stylesheet">
+    <style>
+        body, table, td, div, p, a {
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #2C2C2C;
+            font-family: 'Rubik', Arial, sans-serif;
+            color: #F5F5DC;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #2C2C2C;
+        }
+        
+        .header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(45deg, #2C2C2C, #3C3C3C);
+            border-bottom: 3px solid #D4AF37;
+        }
+        
+        .title {
+            font-family: 'Rubik Mono One', monospace;
+            font-size: 36px;
+            font-weight: bold;
+            color: #F5F5DC;
+            margin: 0 0 10px 0;
+            text-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
+        }
+        
+        .subtitle {
+            font-size: 24px;
+            font-weight: 600;
+            color: #D4AF37;
+            margin: 0;
+        }
+        
+        .main-content {
+            padding: 30px 20px;
+            background-color: #2C2C2C;
+        }
+        
+        .ceremonial-text {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: #F5F5DC;
+            margin: 0 0 30px 0;
+            line-height: 1.4;
+        }
+        
+        .confirmation-box {
+            background: linear-gradient(135deg, #3C3C3C, #2C2C2C);
+            border: 2px solid #D4AF37;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 30px 0;
+            text-align: center;
+        }
+        
+        .confirmation-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #D4AF37;
+            margin: 0 0 15px 0;
+        }
+        
+        .event-details {
+            background-color: rgba(212, 175, 55, 0.1);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 25px 0;
+            text-align: center;
+        }
+        
+        .event-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 10px 0;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            gap: 20px;
+        }
+        
+        .event-row:last-child {
+            border-bottom: none;
+        }
+        
+        .event-label {
+            font-weight: 600;
+            color: #D4AF37;
+        }
+        
+        .event-value {
+            color: #F5F5DC;
+            font-weight: 500;
+        }
+        
+        .description {
+            font-size: 16px;
+            color: #D4AF37;
+            line-height: 1.7;
+            margin: 25px 0;
+            text-align: center;
+        }
+        
+        .highlight {
+            font-weight: bold;
+            color: #F5F5DC;
+        }
+        
+        .important-info {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.2), rgba(212, 175, 55, 0.1));
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 30px 20px;
+            background-color: #1C1C1C;
+            border-top: 2px solid #D4AF37;
+        }
+        
+        .footer-text {
+            font-size: 14px;
+            color: #8B7765;
+            margin: 5px 0;
+        }
+        
+        .blessing {
+            font-style: italic;
+            color: #D4AF37;
+            margin: 20px 0;
+            font-size: 16px;
+            text-align: center;
+        }
+        
+        .calendar-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #D4AF37, #B8941F);
+            color: #2C2C2C;
+            padding: 15px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            margin: 20px 0;
+            border: 2px solid #D4AF37;
+            transition: all 0.3s ease;
+        }
+        
+        .calendar-button:hover {
+            background: linear-gradient(135deg, #B8941F, #D4AF37);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(212, 175, 55, 0.3);
+        }
+        
+        @media only screen and (max-width: 600px) {
+            .title {
+                font-size: 28px;
+            }
+            
+            .subtitle {
+                font-size: 20px;
+            }
+            
+            .ceremonial-text {
+                font-size: 20px;
+            }
+            
+            .event-row {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .event-value {
+                text-align: center;
+                margin-top: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="title">WABLIEFTERU?</div>
+            <div class="subtitle">LIVE!</div>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Ceremonial Greeting -->
+            <div class="ceremonial-text">
+                In nomine Podcasti, et Microphoni,<br>
+                et Spiritus Improvisandi.
+            </div>
+            
+            <!-- Confirmation Box -->
+            <div class="confirmation-box">
+                <div class="confirmation-title">Hey {{ $('When Executed by Another Workflow').item.json.Voornaam }}!<br />✨ Je reservering is bevestigd ✨</div>
+                <p style="margin: 0; color: #F5F5DC; font-size: 16px;">
+                    Je bent welkom op deze gewijde avond van bezinning, verbazing en verwondering.<br />
+                    Meer info volgt later nog!
+                </p>
+            </div>
+
+            <!-- Ticket Info -->
+            <div class="important-info">
+                <div style="font-weight: bold; color: #D4AF37; margin-bottom: 10px;">🎫 Je reservering:</div>
+                <p style="margin: 0; color: #F5F5DC;">
+                    Je hebt {{ $('When Executed by Another Workflow').item.json.Aantal }} tickets gereserveerd! Als je er toch niet kan bij zijn geef ons dan een seintje, 
+                    dan maak je wellicht een andere Wabliefteru?-fan heel gelukkig!
+                </p>
+            </div>
+            
+            <!-- Calendar Button -->
+            <div style="text-align: center; margin: 30px 0;">
+                <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=WABLIEFTERU%3F%20LIVE%21&dates=20250926T173000Z/20250926T210000Z&details=Een%20avond%20van%20bezinning%2C%20verbazing%20en%20verwondering.%20Een%20rite%20van%20het%20absurde%2C%20in%20eerbiedige%20stilte%20die%20telkens%20onderbroken%20zal%20worden%20door%20luid%20gelach%20en%20mogelijk%20licht%20gemompel%20van%20%22Wabliefteru%3F%22&location=%27t%20Kerkske%2C%20Kapellen&sf=true&output=xml" class="calendar-button" target="_blank">
+                    📅 Toevoegen aan agenda
+                </a>
+            </div>
+            
+            <!-- Event Details -->
+            <div class="event-details">
+                <div class="event-row">
+                    <div class="event-label">📅 Datum:</div>
+                    <div class="event-value">Vrijdag 26 september 2025</div>
+                </div>
+                <div class="event-row">
+                    <div class="event-label">📍 Locatie:</div>
+                    <div class="event-value">'t Kerkske, Kapellen</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <div class="footer-text" style="margin-top: 15px; color: #D4AF37;">
+                Tot dan in 't Kerkske! 🎙️⛪
+            </div>
+        </div>
+    </div>
+</body>
+</html>

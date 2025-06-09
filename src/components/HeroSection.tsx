@@ -1,73 +1,59 @@
-
 import { Calendar, MapPin, Clock } from 'lucide-react';
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32">
-      {/* Large header photo space */}
-      <div className="absolute top-0 left-0 right-0 h-32 bg-cathedral-stone/30" />
-      
-      {/* Background Image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat" 
-        style={{
-          backgroundImage: `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('/lovable-uploads/999532ba-0f90-4260-b7a9-fb10839d8481.png')`
-        }} 
-      />
-      
-      {/* Stone texture overlay */}
-      <div className="absolute inset-0 stone-texture opacity-30" />
-      
-      {/* Content */}
-      <div className="relative z-10 text-center px-4 max-w-4xl mx-auto animate-fade-in">
-        <div className="mb-8">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold text-cathedral-cream mb-6 animate-cathedral-glow font-rubik-mono leading-tight">
+    <>
+      {/* Header Image Section - Full viewport height */}
+      <section className="relative h-screen md:h-screen overflow-hidden w-full hero-section-mobile z-10">
+        <div 
+          className="absolute inset-0 bg-center bg-no-repeat w-full h-full hero-bg" 
+          style={{
+            backgroundImage: `url('/images/Header_image.webp')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center 30%'
+          }} 
+        />
+
+        
+        {/* Gradient overlay for bottom half of section */}
+        <div className="hidden md:block absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-[#2c2c2c] via-[#2c2c2c]/70 to-transparent" />
+        
+
+        
+        {/* Title overlay */}
+        <div className="absolute bottom-40 sm:bottom-16 left-0 right-0 z-20 text-center px-2 sm:px-4 w-full">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl font-bold text-cathedral-cream mb-2 animate-cathedral-glow font-rubik-mono leading-tight">
             WABLIEFTERU?
           </h1>
-          <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-9xl font-semibold text-cathedral-gold mb-8">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold text-cathedral-gold">
             LIVE!
           </h2>
         </div>
-        
-        <div className="bg-cathedral-charcoal/80 backdrop-blur-sm rounded-lg p-4 sm:p-6 lg:p-8 mx-auto max-w-2xl border border-cathedral-gold/30">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 text-cathedral-cream">
-            <div className="flex flex-col items-center">
-              <Calendar className="w-6 h-6 sm:w-8 sm:h-8 text-cathedral-gold mb-2" />
-              <span className="text-sm sm:text-base text-cathedral-gold">Vrijdag</span>
-              <span className="text-xl sm:text-2xl font-bold">26</span>
-              <span className="text-base sm:text-lg">SEP</span>
-              <span className="text-base sm:text-lg">2025</span>
-            </div>
-            
-            <div className="flex flex-col items-center">
-              <Clock className="w-6 h-6 sm:w-8 sm:h-8 text-cathedral-gold mb-2" />
-              <span className="text-base sm:text-lg font-medium">20:00</span>
-              <span className="text-xs sm:text-sm text-cathedral-gold">Deuren Open</span>
-            </div>
-            
-            <a 
-              href="https://maps.app.goo.gl/gKSdBceNP6EQUAoa7" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="flex flex-col items-center hover:text-cathedral-gold transition-colors cursor-pointer group"
-            >
-              <MapPin className="w-6 h-6 sm:w-8 sm:h-8 text-cathedral-gold mb-2 group-hover:scale-110 transition-transform" />
-              <span className="text-base sm:text-lg font-medium group-hover:text-cathedral-gold">Kerkske</span>
-              <span className="text-base sm:text-lg font-medium group-hover:text-cathedral-gold">Kappelen</span>
-            </a>
+      </section>
+
+      {/* Content Section - "In nomine Podcasti, et Microphoni, et Spiritus Improvisandi." */}
+      <section className="-mt-16 pt-16 pb-4 md:py-8 md:mt-0 bg-cathedral-charcoal relative z-0">
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-cathedral-cream mb-6">
+              In nomine Podcasti, et Microphoni,
+              <br />
+              et Spiritus Improvisandi.
+            </h2>
+            <p className="text-xl text-cathedral-gold max-w-3xl mx-auto leading-relaxed">
+              Op de dag des Heeren, <strong>vrijdag 26 september 2025</strong>,<br />zal de eerste Live-Voorstelling van Wabliefteru? plaatsvinden,<br />op gewijde grond: <strong>'t Kerkske, te Kapellen.</strong>
+              <br /><br />
+              Een avond van bezinning, verbazing en verwondering.
+              <br />
+              Een rite van het absurde, in eerbiedige stilte 
+              die telkens onderbroken zal worden door luid gelach en mogelijk licht gemompel van "Wabliefteru?"
+              <br />
+              En het beste? Deze onvergetelijke ervaring is <strong>volledig gratis!</strong>
+            </p>
           </div>
         </div>
-        
-        <div className="mt-8 sm:mt-12">
-          <a href="#tickets" className="inline-block bg-cathedral-gold text-cathedral-charcoal px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg hover:bg-cathedral-gold/90 transition-all duration-300 hover:scale-105 shadow-lg">
-            Reserveer Je Plaats
-          </a>
-        </div>
-      </div>
-      
-      {/* Decorative arches */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 cathedral-arch bg-cathedral-stone/20" />
-    </section>
+      </section>
+    </>
   );
 };
 

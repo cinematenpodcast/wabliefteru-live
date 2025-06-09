@@ -54,6 +54,13 @@
     @apply border-border;
   }
 
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+  }
+
   body {
     @apply bg-background text-foreground font-rubik;
   }
@@ -72,5 +79,67 @@
     background-image: 
       radial-gradient(circle at 20% 80%, rgba(139, 119, 101, 0.3) 0%, transparent 50%),
       radial-gradient(circle at 80% 20%, rgba(139, 119, 101, 0.3) 0%, transparent 50%);
+  }
+
+  /* Mobile-specific background image optimizations */
+  @media (max-width: 768px) {
+    .hero-bg {
+      background-size: contain !important;
+      background-position: top center !important;
+      width: 100vw !important;
+    }
+    
+    .hero-section-mobile {
+      height: 40vh !important;
+      min-height: 350px !important;
+    }
+    
+    .pt-16 {
+      padding-top: 0rem !important;
+    }
+
+    .z-10 {
+      z-index: 0 !important;
+    }
+
+    .bottom-40 {
+      bottom: 6rem !important;
+    }
+    
+    .text-xl {
+      text-align: center !important;
+    }
+    
+    /* Center all practical info card content on mobile */
+    .bg-cathedral-charcoal\/40 {
+      text-align: center !important;
+    }
+    
+    .bg-cathedral-charcoal\/40 .flex {
+      justify-content: center !important;
+      align-items: center !important;
+    }
+    
+    .bg-cathedral-charcoal\/40 .space-y-4,
+    .bg-cathedral-charcoal\/40 .space-y-2 {
+      text-align: center !important;
+    }
+    
+    .bg-cathedral-charcoal\/40 .text-sm {
+      text-align: center !important;
+    }
+    
+    /* Hide only tram icon on mobile */
+    .lucide-tram-front {
+      display: none !important;
+    }
+    
+    /* Fix icon positioning on mobile */
+    .lucide-map-pin,
+    .lucide-clock,
+    .lucide-car {
+      margin-left: 0 !important;
+      margin-right: 0.5rem !important;
+    }
   }
 }
