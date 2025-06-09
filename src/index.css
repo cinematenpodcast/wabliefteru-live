@@ -84,7 +84,6 @@
   /* Mobile-specific background image optimizations */
   @media (max-width: 768px) {
     .hero-bg {
-      background-size: contain !important;
       background-position: top center !important;
       width: 100vw !important;
     }
