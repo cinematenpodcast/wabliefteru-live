@@ -92,6 +92,15 @@
     margin-left: auto !important;
     margin-right: auto !important;
   }
+  
+  /* WABLIEFTERU title always 90% viewport width */
+  .hero-main-title {
+    width: 90vw !important;
+    max-width: 90vw !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    font-size: clamp(1.5rem, 8vw, 4rem) !important;
+  }
 
   /* Mobile-specific background image optimizations */
   @media (max-width: 768px) {
@@ -134,7 +143,8 @@
      
      /* Make hero titles 15% bigger on mobile */
      .hero-main-title {
-       font-size: 2.5rem !important;
+       width: 90vw !important;
+       max-width: 90vw !important;
      }
      
      .hero-sub-title {
