@@ -8,7 +8,7 @@ const HeroSection = () => {
         <div 
           className="absolute inset-0 bg-center bg-no-repeat w-full h-full hero-bg" 
           style={{
-            backgroundImage: `url('/images/Header_image.webp')`,
+            backgroundImage: `url('/images/Header_image.jpg')`,
             backgroundSize: 'cover',
             backgroundPosition: 'center 30%'
           }} 
