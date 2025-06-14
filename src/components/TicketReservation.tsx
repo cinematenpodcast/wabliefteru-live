@@ -108,7 +108,7 @@ const TicketReservation = () => {
             {isSubmitted ? (
               <div className="text-center space-y-6">
                 <div className="text-cathedral-cream text-lg leading-relaxed">
-                  Gefeliciteerd! Jij gaat later aan je kleinkinderen kunnen vertellen over de eerste keer dat Wabliefteru? een live-show heeft gedaan en <strong>jij</strong> was daar bij!
+                  Gefeliciteerd! Jij gaat later aan je kleinkinderen kunnen vertellen over de eerste keer dat Wabliefteru? een live-show heeft gedaan en <strong>jij</strong> was daar bij! Je krijgt nog een bevestiging per e-mail. Check zeker je spam folder!
                 </div>
                 <a 
                   href="https://stripo.email/storage/ics/2025/6/ics_wabliefteru-live-2025-06-09-113807.ics"
