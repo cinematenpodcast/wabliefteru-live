@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -18,12 +17,17 @@ const TicketReservation = () => {
   const [hasError, setHasError] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [isSoldOut, setIsSoldOut] = useState(false);
+  const [isError502, setIsError502] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Reservering ingediend:', formData);
     
     setIsLoading(true);
+    setIsSubmitted(false);
+    setHasError(false);
+    setIsSoldOut(false);
+    setIsError502(false);
     
     try {
       const response = await fetch('https://nodemation.dev.icapps-projects.com/webhook/wab-live-reservation', {
@@ -44,6 +48,14 @@ const TicketReservation = () => {
         setIsSoldOut(true);
         setIsSubmitted(false);
         setHasError(false);
+        setIsError502(false);
+        return;
+      }
+      if (response.status === 502) {
+        setIsError502(true);
+        setIsSubmitted(false);
+        setHasError(false);
+        setIsSoldOut(false);
         return;
       }
 
@@ -53,11 +65,13 @@ const TicketReservation = () => {
 
       setIsSubmitted(true);
       setHasError(false);
+      setIsError502(false);
     } catch (error) {
       console.error('Fout bij verzenden reservering:', error);
       setHasError(true);
       setIsSubmitted(false);
       setIsSoldOut(false);
+      setIsError502(false);
     } finally {
       setIsLoading(false);
     }
@@ -66,10 +80,11 @@ const TicketReservation = () => {
   const handleInputChange = (field: string, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }));
     // Reset states when user starts typing again
-    if (isSubmitted || hasError || isSoldOut) {
+    if (isSubmitted || hasError || isSoldOut || isError502) {
       setIsSubmitted(false);
       setHasError(false);
       setIsSoldOut(false);
+      setIsError502(false);
     }
     setIsLoading(false);
   };
@@ -85,6 +100,7 @@ const TicketReservation = () => {
     setHasError(false);
     setIsLoading(false);
     setIsSoldOut(false);
+    setIsError502(false);
   };
 
   return (
@@ -124,6 +140,19 @@ const TicketReservation = () => {
                   Helaas zijn alle tickets uitverkocht! 😢<br />
                   Maar niet getreurd, de show zal ook opgenomen worden en nadien online te bekijken zijn.
                 </div>
+              </div>
+            ) : isError502 ? (
+              <div className="text-center space-y-6">
+                <div className="text-cathedral-cream text-lg leading-relaxed">
+                  Je hebt net gereserveerd. ZE KALM!<br />
+                  Als er iets fout was gegaan met je reservatie, probeer dan over een momentje opnieuw.
+                </div>
+                <Button 
+                  onClick={() => setIsError502(false)}
+                  className="bg-cathedral-gold text-cathedral-charcoal hover:bg-cathedral-gold/90 font-semibold"
+                >
+                  Opnieuw Proberen
+                </Button>
               </div>
             ) : hasError ? (
               <div className="text-center space-y-6">
