@@ -1,4 +1,3 @@
-
 import { MapPin, Car, Train, Clock } from 'lucide-react';
 
 const PracticalInfo = () => {
@@ -24,9 +23,9 @@ const PracticalInfo = () => {
             <div className="space-y-4">
               <div>
                 <p className="text-cathedral-gold/80 mb-2">
-                  <strong>’t Kerkske</strong><br />
+                  <strong>'t Kerkske</strong><br />
                   Kapelsestraat 182<br />
-                  Kappelen, België
+                  Kapellen, België
                 </p>
                 <a 
                   href="https://maps.app.goo.gl/gKSdBceNP6EQUAoa7" 
@@ -45,7 +44,7 @@ const PracticalInfo = () => {
                 </div>
                 <div className="flex items-center">
                   <Train className="w-4 h-4 mr-2 text-cathedral-gold" />
-                  <span>30 minuten wandelen van Station Kappelen</span>
+                  <span>30 minuten wandelen van Station Kapellen</span>
                 </div>
               </div>
             </div>

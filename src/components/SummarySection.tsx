@@ -38,7 +38,7 @@ const SummarySection = () => {
             >
               <MapPin className="w-6 h-6 sm:w-8 sm:h-8 text-cathedral-gold mb-2 group-hover:scale-110 transition-transform" />
               <span className="text-base sm:text-lg font-medium group-hover:text-cathedral-gold">Kerkske</span>
-              <span className="text-base sm:text-lg font-medium group-hover:text-cathedral-gold">Kappelen</span>
+              <span className="text-base sm:text-lg font-medium group-hover:text-cathedral-gold">Kapellen</span>
             </a>
           </div>
         </div>
