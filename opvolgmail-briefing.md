@@ -121,3 +121,4 @@ Een html file
 We zoeken nog hulp van mensen die de bar willen bedienen. Dus als er mensen zijn die zelf ons willen bijstaan of mensen kennen die willen helpen mogen ze ons zeker contacteren via info@wabliefteru.be, "dus kan je oma geen nee zeggen tegen jou of zoek je nog een passende straf voor je kinderen die het uithangen. contacteer ons snel via info@wabliefteru.be"
 
 
+

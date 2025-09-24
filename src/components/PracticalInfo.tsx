@@ -59,18 +59,18 @@ const PracticalInfo = () => {
             
             <div className="space-y-4">
               <ul className="text-cathedral-gold/80 text-sm space-y-2">
-                <li className="flex items-center justify-between">
+                <li className="flex w-full items-center justify-between gap-6">
                   <span>Deuren open</span>
                   <span>19u</span>
                 </li>
-                <li className="flex items-center justify-between">
+                <li className="flex w-full items-center justify-between gap-6">
                   <span>Start</span>
                   <span>20u</span>
                 </li>
                 <li className="text-xs italic text-cathedral-gold/60">
                   Korte pauze ± 15 min
                 </li>
-                <li className="flex items-center justify-between">
+                <li className="flex w-full items-center justify-between gap-6">
                   <span>Einde (verwacht)</span>
                   <span>22u45</span>
                 </li>
