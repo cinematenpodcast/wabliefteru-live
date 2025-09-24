@@ -58,9 +58,23 @@ const PracticalInfo = () => {
             </div>
             
             <div className="space-y-4">
-              <p className="text-cathedral-gold/80 text-sm">
-                Specifieke startuur en duurtijd volgen later nog maar we richten op een start rond 20u!
-              </p>
+              <ul className="text-cathedral-gold/80 text-sm space-y-2">
+                <li className="flex items-center justify-between">
+                  <span>Deuren open</span>
+                  <span>19u</span>
+                </li>
+                <li className="flex items-center justify-between">
+                  <span>Start</span>
+                  <span>20u</span>
+                </li>
+                <li className="text-xs italic text-cathedral-gold/60">
+                  Korte pauze ± 15 min
+                </li>
+                <li className="flex items-center justify-between">
+                  <span>Einde (verwacht)</span>
+                  <span>22u45</span>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
