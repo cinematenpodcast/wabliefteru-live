@@ -26,7 +26,6 @@ jobs:
       - name: Run OpenCode
         uses: anomalyco/opencode/github@latest
         env:
-          ROUTE33_API_KEY: ${{ secrets.ROUTE33_API_KEY }}
-          ROUTE33_TUI_PROMPT: "0"
+          R33_API_KEY: ${{ secrets.R33_API_KEY }}
         with:
           model: route_33/anthropic/claude-opus-4-8
